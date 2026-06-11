@@ -521,6 +521,12 @@ h2 {
       linear-gradient(0deg, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.08) 56%);
   }
 
+  .hero-image {
+    background:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),
+      url("assets/hero-umbrella-mobile.jpg") center / cover no-repeat;
+  }
+
   .hero-actions,
   .contact-actions {
     align-items: stretch;
