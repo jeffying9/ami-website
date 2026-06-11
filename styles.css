@@ -414,6 +414,10 @@ h2 {
   font-size: 14px;
 }
 
+.site-footer .footer-logo {
+  color: #6f6f6f;
+}
+
 .site-footer > div {
   display: inline-flex;
   align-items: center;
