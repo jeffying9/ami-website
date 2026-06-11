@@ -186,9 +186,16 @@ p {
 h1 {
   max-width: 900px;
   margin-bottom: 22px;
-  font-size: clamp(52px, 8vw, 106px);
-  line-height: 0.94;
+  font-size: clamp(38px, 6vw, 76px);
+  line-height: 1.02;
   letter-spacing: 0;
+}
+
+.brand-line {
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 600;
 }
 
 .hero-copy {
