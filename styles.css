@@ -7,6 +7,8 @@
   --deep: #101010;
   --soft: #e9e9e7;
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.13);
+  --page-max: 1160px;
+  --page-x: clamp(20px, 5vw, 72px);
 }
 
 * {
@@ -209,20 +211,18 @@ h1 {
 }
 
 .section-pad {
-  padding: clamp(74px, 9vw, 128px) clamp(20px, 5vw, 72px);
+  padding: clamp(74px, 9vw, 128px) var(--page-x);
 }
 
 .section-heading {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
-  gap: clamp(24px, 5vw, 72px);
-  max-width: 1160px;
-  margin: 0 auto;
+  display: block;
+  max-width: var(--page-max);
+  margin: 0 auto 36px;
 }
 
 .section-heading.compact {
   display: block;
-  max-width: 760px;
+  max-width: var(--page-max);
   margin-bottom: 36px;
 }
 
@@ -234,9 +234,14 @@ h2 {
 }
 
 .intro-copy {
-  max-width: 680px;
+  max-width: var(--page-max);
+  margin: 0 auto;
   color: var(--muted);
   font-size: 18px;
+}
+
+.intro-copy p {
+  max-width: 680px;
 }
 
 .intro-copy p:last-child {
@@ -251,7 +256,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
-  max-width: 1160px;
+  max-width: var(--page-max);
   margin: 0 auto;
   background: var(--line);
   border: 1px solid var(--line);
@@ -301,7 +306,7 @@ h2 {
 }
 
 .method-list {
-  max-width: 1160px;
+  max-width: var(--page-max);
   margin: 0 auto;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -334,7 +339,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
-  max-width: 1160px;
+  max-width: var(--page-max);
   margin: 0 auto;
   background: var(--line);
   border: 1px solid var(--line);
@@ -354,7 +359,7 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
   gap: 48px;
-  max-width: 1160px;
+  max-width: var(--page-max);
   margin: 0 auto;
   padding: clamp(30px, 5vw, 56px);
   color: var(--white);
