@@ -68,6 +68,19 @@ a {
   backdrop-filter: blur(18px);
 }
 
+.site-header.service-header {
+  position: absolute;
+  color: var(--white);
+  background: transparent;
+}
+
+.site-header.service-header.is-scrolled,
+.site-header.service-header.is-open {
+  position: fixed;
+  color: var(--ink);
+  background: rgba(246, 245, 240, 0.94);
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -278,9 +291,18 @@ h2 {
 }
 
 .capability-card {
+  display: block;
   min-height: 292px;
   padding: 28px;
   background: var(--white);
+}
+
+a.capability-card {
+  transition: background 160ms ease, color 160ms ease;
+}
+
+a.capability-card:hover {
+  background: var(--soft);
 }
 
 .capability-card.core {
@@ -469,6 +491,74 @@ h2 {
   color: rgba(255, 255, 255, 0.58);
 }
 
+.service-hero {
+  position: relative;
+  min-height: 58vh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--ink);
+}
+
+.service-hero-image,
+.service-hero-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.service-hero-image {
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.14)),
+    url("assets/hero-umbrella.jpg") center / cover no-repeat;
+  filter: grayscale(1) contrast(1.08) brightness(0.68);
+}
+
+.service-hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.62) 48%, rgba(0, 0, 0, 0.34)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.08) 60%);
+}
+
+.service-hero-content {
+  position: relative;
+  width: min(var(--page-max), calc(100% - (var(--page-x) * 2)));
+  margin: 0 auto;
+  padding: 148px 0 clamp(58px, 8vw, 92px);
+}
+
+.service-hero .eyebrow {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.service-hero h1 {
+  max-width: 880px;
+  margin-bottom: 0;
+  color: var(--white);
+  font-size: clamp(46px, 8vw, 96px);
+  line-height: 0.98;
+}
+
+.service-body {
+  min-height: 48vh;
+  padding: clamp(84px, 10vw, 140px) var(--page-x);
+  background: var(--paper);
+}
+
+.service-body-inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+}
+
+.service-body p {
+  max-width: 680px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: clamp(20px, 2.2vw, 28px);
+}
+
 .placeholder-page {
   min-height: calc(100vh - 186px);
   padding: clamp(96px, 12vw, 160px) var(--page-x);
@@ -582,6 +672,21 @@ h2 {
     background:
       linear-gradient(0deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),
       url("assets/hero-umbrella-mobile.jpg") center / cover no-repeat;
+  }
+
+  .service-hero {
+    min-height: 58vh;
+  }
+
+  .service-hero-image {
+    background:
+      linear-gradient(0deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.14)),
+      url("assets/hero-umbrella-mobile.jpg") center / cover no-repeat;
+  }
+
+  .service-hero-content {
+    width: min(100% - 34px, var(--page-max));
+    padding: 132px 0 58px;
   }
 
   .hero-actions,
