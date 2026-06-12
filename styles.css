@@ -537,8 +537,8 @@ a.capability-card:hover {
   max-width: 880px;
   margin-bottom: 0;
   color: var(--white);
-  font-size: clamp(46px, 8vw, 96px);
-  line-height: 0.98;
+  font-size: clamp(32px, 3.8vw, 54px);
+  line-height: 1.08;
 }
 
 .service-body {
