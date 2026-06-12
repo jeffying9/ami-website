@@ -159,6 +159,37 @@ a {
   padding: 156px 0 13vh;
 }
 
+.hero-content > * {
+  animation: heroFadeIn 720ms ease both;
+}
+
+.hero-content > *:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.hero-content > *:nth-child(3) {
+  animation-delay: 180ms;
+}
+
+.hero-content > *:nth-child(4) {
+  animation-delay: 270ms;
+}
+
+.hero-content > *:nth-child(5) {
+  animation-delay: 360ms;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .eyebrow {
   margin: 0 0 14px;
   color: #3e3e3e;
@@ -218,6 +249,7 @@ h1 {
   border: 1px solid transparent;
   font-size: 14px;
   font-weight: 700;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
 .button.primary {
@@ -229,6 +261,19 @@ h1 {
   color: var(--white);
   border-color: rgba(255, 255, 255, 0.55);
   background: rgba(255, 255, 255, 0.06);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button.primary:hover {
+  background: #2a2f2a;
+}
+
+.button.secondary:hover {
+  border-color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .section-pad {
@@ -298,11 +343,12 @@ h2 {
 }
 
 a.capability-card {
-  transition: background 160ms ease, color 160ms ease;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 a.capability-card:hover {
   background: var(--soft);
+  transform: translateY(-2px);
 }
 
 .capability-card.core {
@@ -557,6 +603,36 @@ a.capability-card:hover {
   margin-bottom: 0;
   color: var(--muted);
   font-size: clamp(20px, 2.2vw, 28px);
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 620ms ease, transform 620ms ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .placeholder-page {

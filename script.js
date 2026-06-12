@@ -21,3 +21,22 @@ nav.addEventListener("click", (event) => {
   header.classList.remove("is-open");
   navToggle.setAttribute("aria-expanded", "false");
 });
+
+const revealTargets = document.querySelectorAll("[data-reveal]");
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -12% 0px", threshold: 0.12 }
+  );
+
+  revealTargets.forEach((target) => revealObserver.observe(target));
+} else {
+  revealTargets.forEach((target) => target.classList.add("is-visible"));
+}
