@@ -19,3 +19,5 @@ prototyping, manufacturing, and China-based supply chain execution.
 - Add confirmed contact details.
 - Add project evidence, process documents, or selected case studies when ready.
 - Prepare deployment to Vercel, Cloudflare Pages, Netlify, or another static host.
+
+11
